@@ -1,0 +1,142 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-30T00:00:00Z",
+  "title": "Design System: Puerta Azul",
+  "extensions": {
+    "colorMeta": {
+      "profundo": { "role": "primary", "displayName": "Azul Profundo", "canonical": "#0e4a7b", "tonalRamp": ["#04192c", "#082c4b", "#0e4a7b", "#1d5f96", "#4a7fb0", "#7ba3c9", "#b0c9e2", "#e3edf7"] },
+      "clinico": { "role": "primary", "displayName": "Azul Clínico", "canonical": "#2268a3", "tonalRamp": ["#081d31", "#10345a", "#1a4f80", "#2268a3", "#4d87bd", "#7ea8d1", "#b4cde6", "#e5eff8"] },
+      "celeste": { "role": "neutral", "displayName": "Celeste", "canonical": "#dcebf7", "tonalRamp": ["#1f3343", "#3c5a72", "#6489a6", "#93b3cc", "#b9d1e5", "#dcebf7", "#ebf4fb", "#f7fbfe"] },
+      "junta": { "role": "neutral", "displayName": "Junta", "canonical": "#c3d9ee", "tonalRamp": ["#1c3044", "#37536f", "#5b7d9d", "#86a7c6", "#9cbcdb", "#c3d9ee", "#dcebf7", "#f2f7fc"] },
+      "esmalte": { "role": "neutral", "displayName": "Esmalte", "canonical": "#f7fbfe", "tonalRamp": ["#26313a", "#46535e", "#6c7a86", "#97a4ae", "#c0cbd3", "#e2eaf0", "#eef4f9", "#f7fbfe"] },
+      "white": { "role": "neutral", "displayName": "Blanco", "canonical": "#ffffff" },
+      "tinta": { "role": "neutral", "displayName": "Tinta", "canonical": "#14283b", "tonalRamp": ["#0a1520", "#14283b", "#253d55", "#3d5268", "#5f7489", "#8a9cad", "#b9c5d0", "#e6ebf0"] },
+      "tinta-suave": { "role": "neutral", "displayName": "Tinta Suave", "canonical": "#3d5268" },
+      "wa": { "role": "secondary", "displayName": "Verde WhatsApp", "canonical": "#25d366", "tonalRamp": ["#063d1c", "#0b6630", "#128f44", "#1bb558", "#25d366", "#3ddc79", "#8deab0", "#dcf9e6"] },
+      "wa-hover": { "role": "secondary", "displayName": "Verde WhatsApp hover", "canonical": "#3ddc79" },
+      "error": { "role": "error", "displayName": "Error", "canonical": "#b42318" }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Hero headline only; second clause in clinico." },
+      "headline": { "displayName": "Headline", "purpose": "Section titles in profundo; 2.1rem mobile, 2.75rem desktop." },
+      "title": { "displayName": "Title", "purpose": "Step, species and urgency tier titles." },
+      "plate-numeral": { "displayName": "Plate numeral", "purpose": "Figures inside azulejo plates, tabular." },
+      "body": { "displayName": "Body", "purpose": "Running text." },
+      "body-lead": { "displayName": "Lead", "purpose": "Section lead paragraphs in tinta-suave, max 58ch." },
+      "label": { "displayName": "Label", "purpose": "Definition terms, field labels, table heads; sentence case." }
+    },
+    "shadows": [
+      { "name": "plate-glaze", "value": "0 10px 24px -12px rgb(14 74 123 / 0.45), inset 0 0 0 4px #f7fbfe, inset 0 0 0 5.5px #2268a3", "purpose": "Plate lift plus inner painted frame line." },
+      { "name": "framed-object", "value": "0 24px 48px -28px rgb(14 74 123 / 0.55)", "purpose": "Hero map frame and form panel." },
+      { "name": "grave-panel", "value": "0 20px 40px -24px rgb(14 74 123 / 0.8)", "purpose": "Profundo urgent tier." },
+      { "name": "green-lift", "value": "0 8px 20px -10px rgb(20 40 59 / 0.55)", "purpose": "WhatsApp buttons." },
+      { "name": "nav-scrolled", "value": "0 1px 0 #c3d9ee, 0 8px 24px -18px rgb(14 74 123 / 0.4)", "purpose": "Sticky header after scroll." }
+    ],
+    "motion": [
+      { "name": "ease-out-expo", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Arrivals: hero CTA reveal, facade card, arrival ring." },
+      { "name": "ease-out-quint", "value": "cubic-bezier(0.23, 1, 0.32, 1)", "purpose": "FAB entry, form disclosures and status." },
+      { "name": "ease-drawer", "value": "cubic-bezier(0.32, 0.72, 0, 1)", "purpose": "Mobile menu clip-path drawer, 260ms." },
+      { "name": "route-draw", "value": "0.95s cubic-bezier(0.65, 0, 0.35, 1), 0.15s delay", "purpose": "Hero route stroke; whole arrival moment under 1.5s." },
+      { "name": "press", "value": "150ms ease-out, scale 0.97", "purpose": "Active state of every button." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" },
+      { "name": "xl", "value": "1280px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "WhatsApp Button",
+      "kind": "button",
+      "refersTo": "button-whatsapp",
+      "description": "The only green control; opens WhatsApp. Tinta text and glyph.",
+      "html": "<a class=\"ds-btn-wa\" href=\"#\"><svg viewBox=\"0 0 256 256\" width=\"24\" height=\"24\" aria-hidden=\"true\"><path d=\"M128 32a96 96 0 0 0-83.2 144L32 224l49.4-12.6A96 96 0 1 0 128 32Z\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"20\" stroke-linejoin=\"round\"/><path d=\"M92 92c0 40 32 72 72 72l14-20-24-12-12 12a40 40 0 0 1-30-30l12-12-12-24Z\" fill=\"currentColor\"/></svg>Agendar por WhatsApp</a>",
+      "css": ".ds-btn-wa { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 56px; padding: 0 28px; border-radius: 9999px; background: var(--color-wa, #25d366); color: var(--color-tinta, #14283b); font-family: 'Figtree Variable', system-ui, sans-serif; font-weight: 600; font-size: 1.0625rem; text-decoration: none; box-shadow: 0 8px 20px -10px rgb(20 40 59 / 0.55); transition: transform 150ms ease-out, background-color 150ms ease-out; } .ds-btn-wa:hover { background: #3ddc79; } .ds-btn-wa:active { transform: scale(0.97); } .ds-btn-wa:focus-visible { outline: 3px solid #2268a3; outline-offset: 3px; }"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Secondary navigation action with clinico stroke and nudging arrow.",
+      "html": "<a class=\"ds-btn-ghost\" href=\"#\">Ver servicios y precios<svg viewBox=\"0 0 256 256\" width=\"16\" height=\"16\" aria-hidden=\"true\"><path d=\"M40 128h176M144 56l72 72-72 72\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"24\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></a>",
+      "css": ".ds-btn-ghost { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 56px; padding: 0 24px; border: 2px solid #2268a3; border-radius: 9999px; color: #2268a3; background: transparent; font-family: 'Figtree Variable', system-ui, sans-serif; font-weight: 600; text-decoration: none; transition: background-color 150ms ease-out, color 150ms ease-out, transform 150ms ease-out; } .ds-btn-ghost svg { transition: transform 200ms ease-out; } .ds-btn-ghost:hover { background: #2268a3; color: #fff; } .ds-btn-ghost:hover svg { transform: translateX(2px); } .ds-btn-ghost:active { transform: scale(0.97); } .ds-btn-ghost:focus-visible { outline: 3px solid #2268a3; outline-offset: 3px; }"
+    },
+    {
+      "name": "Azulejo Plate",
+      "kind": "custom",
+      "refersTo": "plate",
+      "description": "The only decorated container: enamel tile with double cobalt frame and painted corner florons, for key figures.",
+      "html": "<div class=\"ds-plate\"><svg class=\"ds-plate-c tl\" viewBox=\"0 0 20 20\"><path d=\"M2 2h7.5A7.5 7.5 0 0 1 2 9.5z\" fill=\"#0e4a7b\"/><path d=\"M2 13a11 11 0 0 0 11-11\" fill=\"none\" stroke=\"#2268a3\" stroke-width=\"1.4\"/><circle cx=\"11.5\" cy=\"11.5\" r=\"1.6\" fill=\"#2268a3\"/></svg><svg class=\"ds-plate-c tr\" viewBox=\"0 0 20 20\"><path d=\"M2 2h7.5A7.5 7.5 0 0 1 2 9.5z\" fill=\"#0e4a7b\"/><path d=\"M2 13a11 11 0 0 0 11-11\" fill=\"none\" stroke=\"#2268a3\" stroke-width=\"1.4\"/><circle cx=\"11.5\" cy=\"11.5\" r=\"1.6\" fill=\"#2268a3\"/></svg><svg class=\"ds-plate-c br\" viewBox=\"0 0 20 20\"><path d=\"M2 2h7.5A7.5 7.5 0 0 1 2 9.5z\" fill=\"#0e4a7b\"/><path d=\"M2 13a11 11 0 0 0 11-11\" fill=\"none\" stroke=\"#2268a3\" stroke-width=\"1.4\"/><circle cx=\"11.5\" cy=\"11.5\" r=\"1.6\" fill=\"#2268a3\"/></svg><svg class=\"ds-plate-c bl\" viewBox=\"0 0 20 20\"><path d=\"M2 2h7.5A7.5 7.5 0 0 1 2 9.5z\" fill=\"#0e4a7b\"/><path d=\"M2 13a11 11 0 0 0 11-11\" fill=\"none\" stroke=\"#2268a3\" stroke-width=\"1.4\"/><circle cx=\"11.5\" cy=\"11.5\" r=\"1.6\" fill=\"#2268a3\"/></svg><span class=\"ds-plate-n\">3</span></div>",
+      "css": ".ds-plate { position: relative; display: grid; place-items: center; width: 104px; aspect-ratio: 1; border: 3px solid #0e4a7b; border-radius: 0.4rem; color: #0e4a7b; background: linear-gradient(140deg, #fff 0%, #fff0 45%, #dcebf700 70%, #dcebf780 100%), #f7fbfe; box-shadow: 0 10px 24px -12px rgb(14 74 123 / 0.45), inset 0 0 0 4px #f7fbfe, inset 0 0 0 5.5px #2268a3; } .ds-plate-c { position: absolute; width: 22%; max-width: 28px; } .ds-plate-c.tl { left: 6px; top: 6px; } .ds-plate-c.tr { right: 6px; top: 6px; transform: rotate(90deg); } .ds-plate-c.br { right: 6px; bottom: 6px; transform: rotate(180deg); } .ds-plate-c.bl { left: 6px; bottom: 6px; transform: rotate(-90deg); } .ds-plate-n { font-family: 'Fredoka Variable', ui-rounded, sans-serif; font-weight: 600; font-size: 3rem; line-height: 1; font-variant-numeric: tabular-nums; }"
+    },
+    {
+      "name": "Text Field",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Form input with junta border and celeste focus halo.",
+      "html": "<label class=\"ds-field\"><span>Tu nombre</span><input class=\"ds-input\" type=\"text\" /></label>",
+      "css": ".ds-field { display: flex; flex-direction: column; gap: 8px; font-family: 'Figtree Variable', system-ui, sans-serif; font-weight: 600; color: #14283b; } .ds-input { min-height: 54px; padding: 12px 16px; border: 2px solid #c3d9ee; border-radius: 0.4rem; background: #fff; color: #14283b; font: 400 1.0625rem 'Figtree Variable', system-ui, sans-serif; transition: border-color 150ms, box-shadow 150ms; } .ds-input:focus { outline: none; border-color: #2268a3; box-shadow: 0 0 0 4px #dcebf7; } .ds-input[aria-invalid=true] { border-color: #b42318; }"
+    },
+    {
+      "name": "Navigation",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "White sticky bar, 4.5rem tall, pill-hover links and WhatsApp action.",
+      "html": "<nav class=\"ds-nav\"><strong class=\"ds-nav-logo\">Puerta Azul</strong><ul><li><a href=\"#\" class=\"is-active\">Servicios y precios</a></li><li><a href=\"#\">Catálogo</a></li><li><a href=\"#\">Cómo funciona</a></li><li><a href=\"#\">Zona</a></li></ul></nav>",
+      "css": ".ds-nav { display: flex; align-items: center; justify-content: space-between; height: 4.5rem; padding: 0 32px; background: #fff; box-shadow: 0 1px 0 #c3d9ee, 0 8px 24px -18px rgb(14 74 123 / 0.4); font-family: 'Figtree Variable', system-ui, sans-serif; } .ds-nav-logo { font-family: 'Fredoka Variable', ui-rounded, sans-serif; color: #0e4a7b; font-size: 1.4rem; } .ds-nav ul { display: flex; gap: 4px; list-style: none; margin: 0; padding: 0; } .ds-nav a { display: block; padding: 8px 14px; border-radius: 9999px; font-size: 0.95rem; font-weight: 600; color: #14283b; text-decoration: none; transition: background-color 150ms, color 150ms; } .ds-nav a.is-active { color: #2268a3; } .ds-nav a:hover { background: #dcebf7; color: #0e4a7b; } .ds-nav a:focus-visible { outline: 3px solid #2268a3; outline-offset: 3px; }"
+    },
+    {
+      "name": "Urgency Escalation",
+      "kind": "card",
+      "refersTo": "urgency-grave",
+      "description": "Three tiers escalating by tone: junta ring, clinico ring, full profundo panel.",
+      "html": "<div class=\"ds-urg\"><div class=\"ds-urg-t calm\"><h3>Puede esperar</h3><p>Vómito o diarrea leve</p></div><div class=\"ds-urg-t urgent\"><h3>Escríbenos hoy</h3><p>Herida que sangra poco</p></div><div class=\"ds-urg-t grave\"><h3>Ve a un hospital</h3><p>Le cuesta respirar</p></div></div>",
+      "css": ".ds-urg { display: grid; grid-template-columns: 1fr 1fr 1.25fr; gap: 20px; font-family: 'Figtree Variable', system-ui, sans-serif; } .ds-urg-t { padding: 28px; border-radius: 0.5rem; color: #3d5268; } .ds-urg-t h3 { margin: 0 0 12px; font: 600 1.45rem/1.25 'Fredoka Variable', ui-rounded, sans-serif; color: #0e4a7b; } .ds-urg-t.calm { box-shadow: 0 0 0 1px #c3d9ee; } .ds-urg-t.urgent { box-shadow: 0 0 0 2.5px #2268a3; } .ds-urg-t.grave { background: #0e4a7b; color: #dcebf7; padding: 32px; box-shadow: 0 20px 40px -24px rgb(14 74 123 / 0.8); } .ds-urg-t.grave h3 { color: #fff; font-size: 1.6rem; }"
+    },
+    {
+      "name": "Route Terminus",
+      "kind": "custom",
+      "description": "The 5px clinico route stroke ending in an open-circle pin beside the submit button.",
+      "html": "<div class=\"ds-route\"><span class=\"ds-route-bar\"></span><span class=\"ds-route-pin\"></span><button class=\"ds-route-btn\">Enviar por WhatsApp</button></div>",
+      "css": ".ds-route { display: flex; align-items: center; } .ds-route-bar { width: 144px; height: 5px; background: #2268a3; } .ds-route-pin { width: 1.15rem; height: 1.15rem; margin-left: -2px; border: 3.5px solid #0e4a7b; border-radius: 9999px; background: #fff; box-sizing: border-box; } .ds-route-btn { min-height: 56px; padding: 0 28px; border: 0; border-radius: 9999px; background: #25d366; color: #14283b; font: 600 1.0625rem 'Figtree Variable', system-ui, sans-serif; box-shadow: 0 8px 20px -10px rgb(20 40 59 / 0.55); transition: transform 150ms ease-out, background-color 150ms; } .ds-route-btn:hover { background: #3ddc79; } .ds-route-btn:active { transform: scale(0.97); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "La Placa de la Puerta",
+    "overview": "The system is a Guadalajara doorway rendered in cobalt and white enamel. The square tile module (4.5rem) is the rule of the whole page: it is drawn as fine celeste grout behind the hero, the request form and the reviews band, and it sizes the cenefa border. Against that wall, a painted tile plate (white enamel, double cobalt frame, hand-painted corner florons) carries only the figures and labels that must be believed: step numbers, the professional license, species, vaccination ages.\n\nHierarchy comes from tone and scale, never from rows of identical cards. Content is set as ruled lists (price rows, zone table, FAQ) hung from a 2px profundo rule; emphasis escalates by ring weight and then by a full profundo field. One active line runs through the whole site: the 5px rounded clinico route stroke drawn across the hero map, which reappears as the steps connector and as the terminus that leads into the form's submit button.\n\nThe voice is warm and rounded (Fredoka) on the plates and headings, plain and legible (Figtree) everywhere people read. The visual rejection confirmed by the direction: no dog-photo hero, no grid of matching service cards.",
+    "keyCharacteristics": [
+      "Cobalt on white enamel; celeste as grout and as a quiet section field.",
+      "4.5rem square tile module as the page's spatial rule.",
+      "The azulejo plate is the only decorated container, reserved for key figures and labels.",
+      "One active line: the 5px rounded clinico route.",
+      "WhatsApp green is functional only, on WhatsApp actions.",
+      "Tone-and-scale hierarchy; ruled lists instead of equal cards."
+    ],
+    "rules": [
+      { "name": "The Green Is a Door Rule", "body": "Verde WhatsApp appears only on controls that open WhatsApp, always with Tinta text. Never as decoration, never as a section accent, never with white text.", "section": "colors" },
+      { "name": "The Celeste Two-Jobs Rule", "body": "Celeste is grout and halo at small scale, and a calm field at section scale (services, vaccination). It is never a text color on white.", "section": "colors" },
+      { "name": "The Fredoka-On-Plates Rule", "body": "Fredoka is for headings and plate figures. Anything a person scans in a list (service names, questions, form labels) is Figtree.", "section": "typography" },
+      { "name": "The Quiet Farewell Rule", "body": "The euthanasia section is unornamented and its heading is Figtree in tinta at 1.6rem: no plate, no tile wall, no green, a single underlined text link.", "section": "typography" },
+      { "name": "The Tile Module Rule", "body": "The 4.5rem square is the page's unit: grout, nav height and the vet photo frame's grid all key to it.", "section": "layout" },
+      { "name": "The Soft Glaze Rule", "body": "Shadows are blurred, negatively spread and cobalt-tinted. No hard offset shadows.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do reserve the azulejo plate for figures and labels that must be believed (numbers, license, species, ages).",
+      "Do keep the cenefa (2.25rem azulejo, whole tiles only) to the hero map frame and the footer top; plates use their painted florons instead.",
+      "Do escalate emphasis by tone: hairline ring, then 2.5px clinico ring, then full profundo field.",
+      "Do reuse the 5px rounded clinico stroke as the only active connecting line.",
+      "Do set WhatsApp buttons in wa with Tinta text and the bold WhatsApp glyph.",
+      "Do mark missing client data as italic \"Por confirmar\" in tinta-suave rather than inventing values.",
+      "Do keep the euthanasia section unornamented, in Figtree, with no green button."
+    ],
+    "donts": [
+      "Don't build grids of identical service cards; use ruled lists.",
+      "Don't use a dog-photo hero or stock photography.",
+      "Don't put WhatsApp green on anything that does not open WhatsApp, or white text on it.",
+      "Don't add a second accent stroke or dashed decorative lines beyond the map's guide line.",
+      "Don't use hard offset shadows."
+    ]
+  }
+}
