@@ -339,14 +339,11 @@ export function RequestForm() {
             )}
           </div>
 
-          <div className="mt-7 flex flex-col gap-4 sm:flex-row sm:items-center">
-            {/* Remate de la ruta: el trazo llega a la casa y de ahí a WhatsApp */}
-            <span aria-hidden="true" className="hidden items-center sm:flex">
-              <span className="h-[5px] w-10 rounded-l-full bg-clinico" />
-              <svg viewBox="-14 -14 28 28" className="-ml-0.5 size-7">
-                <circle r="13" fill="var(--color-profundo)" />
-                <path d="M-6 1 0-5 6 1M-4 0v6h8V0" fill="none" stroke="#fff" strokeWidth="2" strokeLinejoin="round" strokeLinecap="round" />
-              </svg>
+          <div className="mt-7 flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-0">
+            {/* Remate de la ruta: el trazo entra desde el borde del panel y termina en el botón, como en el mapa */}
+            <span aria-hidden="true" className="hidden items-center sm:-ml-8 sm:flex">
+              <span className="h-[5px] w-36 bg-clinico" />
+              <span className="-ml-0.5 size-[1.15rem] shrink-0 rounded-full border-[3.5px] border-profundo bg-white" />
             </span>
             <button
               type="submit"
@@ -363,7 +360,7 @@ export function RequestForm() {
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0 }}
                   transition={{ duration: 0.25, ease: [0.23, 1, 0.32, 1] }}
-                  className="flex items-center gap-2 font-semibold text-profundo"
+                  className="flex items-center gap-2 font-semibold text-profundo sm:ml-5"
                 >
                   <CheckCircleIcon weight="fill" className="size-6 text-clinico" aria-hidden="true" />
                   Listo: solo falta que envíes el mensaje en WhatsApp.

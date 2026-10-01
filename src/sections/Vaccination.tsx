@@ -28,17 +28,12 @@ export function Vaccination() {
   return (
     <section id="vacunacion" aria-labelledby="vacunacion-title" className="bg-celeste py-20 sm:py-28">
       <Container>
-        <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
-          <SectionHead id="vacunacion-title" title="Su calendario de vacunas y desparasitación">
-            Una guía general por edad. En la consulta el veterinario lo ajusta a la salud y el historial de tu
-            mascota.
-          </SectionHead>
-          <WaButton href={waService('vacunación')} size="lg" className="shrink-0 self-start lg:self-end">
-            Agendar vacuna
-          </WaButton>
-        </div>
+        <SectionHead id="vacunacion-title" title="Su calendario de vacunas y desparasitación">
+          Una guía general por edad. En la consulta el veterinario lo ajusta a la salud y el historial de tu mascota.
+        </SectionHead>
 
-        <div role="tablist" aria-label="Especie" className="mt-12 inline-flex rounded-full bg-white p-1.5">
+        <div className="mt-10 flex flex-col-reverse gap-6 sm:flex-row sm:items-center sm:gap-5">
+        <div role="tablist" aria-label="Especie" className="inline-flex self-start rounded-full bg-white p-1.5">
           {TABS.map((t) => (
             <button
               key={t.id}
@@ -65,6 +60,10 @@ export function Vaccination() {
             </button>
           ))}
         </div>
+          <WaButton href={waService('vacunación')} size="lg" className="self-start sm:self-auto">
+            Agendar vacuna
+          </WaButton>
+        </div>
 
         <div id={`${uid}-panel`} role="tabpanel" aria-labelledby={`${uid}-${tab}`} className="mt-8">
           <motion.ol
@@ -72,17 +71,17 @@ export function Vaccination() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.2 }}
-            className="grid grid-cols-2 gap-x-5 gap-y-9 sm:grid-cols-3 lg:grid-cols-5"
+            className="grid gap-5 sm:grid-cols-3 sm:gap-x-5 sm:gap-y-9 lg:grid-cols-5"
             aria-label={`Calendario orientativo para ${tab === 'perro' ? 'perros' : 'gatos'}`}
           >
             {vaccination[tab].map((row) => (
-              <li key={row.age}>
+              <li key={row.age} className="grid grid-cols-[6.5rem_1fr] items-center gap-5 sm:block">
                 <Plate>
-                  <span className="tabular block font-display text-[1.35rem] leading-[1.1] font-semibold sm:text-[1.5rem]">
+                  <span className="tabular block font-display text-[1rem] leading-[1.1] font-semibold sm:text-[1.5rem]">
                     {row.age}
                   </span>
                 </Plate>
-                <p className="mt-4 text-tinta">{row.what}</p>
+                <p className="text-tinta sm:mt-4">{row.what}</p>
               </li>
             ))}
           </motion.ol>
