@@ -1,0 +1,117 @@
+{
+  "title": "Elige el mundo visual",
+  "question": "El sorteo asignó «Azulejo de puerta». Quédate con él, toma una alternativa o vuelve a tirar.",
+  "options": [
+    {
+      "id": "assigned",
+      "label": "Azulejo de puerta",
+      "kicker": "THE ROLL",
+      "lineage": "Números de casa en azulejo azul y blanco de las fachadas tapatías",
+      "thesis": "La consulta llega a tu puerta, y en Guadalajara la puerta se reconoce por su azulejo con el número.",
+      "palette": ["#0E4A7B", "#2268A3", "#DCEBF7", "#FFFFFF", "#14283B"],
+      "materials": ["azul cobalto pintado sobre esmalte blanco", "retícula cuadrada de azulejo con junta fina", "mapa de la ZMG en línea fina"],
+      "viewport": "Titular grande a la izquierda y CTA de WhatsApp; a la derecha (debajo en celular) el mapa de la ZMG, donde la ruta se dibuja hasta una puerta cuya placa de azulejo dice «Tu casa».",
+      "risk": "Si el ornamento se extiende, cae en artesanía de souvenir: la cenefa solo vive en la placa, el borde del hero y el pie.",
+      "raised": [
+        { "from": "Cracktro", "raise": "Jerarquía sin cajas: el rango se marca con tono, escala y profundidad, nunca con tarjetas idénticas." },
+        { "from": "Pliegue curvo", "raise": "Una sola línea manda: el trazo de la ruta del hero es el único elemento activo y reaparece como hilo entre secciones." },
+        { "from": "Textil op-art", "raise": "La cenefa de azulejo se genera en SVG y se repite sin costura visible a cualquier ancho." },
+        { "from": "Alerta kaiju", "raise": "Urgencias con gramática de escalamiento: lo rutinario en calma, lo urgente con borde y lo grave en color pleno con el hospital 24 h." },
+        { "from": "Puente de vúmetros", "raise": "El módulo cuadrado del azulejo es la regla de toda la página: espaciados y medidas salen de él." }
+      ]
+    },
+    {
+      "id": "model-pick",
+      "label": "En camino",
+      "kicker": "IMPECCABLE’S PICK",
+      "lineage": "Pantallas de seguimiento de entregas (Rappi, DiDi, Uber)",
+      "thesis": "La cita se cuenta como un pedido en tiempo real: el veterinario «va en camino» hacia tu colonia.",
+      "palette": ["#FFFFFF", "#DCEBF7", "#2268A3", "#0E4A7B", "#14283B"],
+      "materials": ["mapa vectorial claro", "tarjeta inferior tipo hoja deslizable", "estados de progreso en vivo"],
+      "viewport": "Mapa a pantalla completa con la ruta y una hoja inferior: «MVZ Eric · llega a tu casa», con CTA de WhatsApp.",
+      "risk": "Muy familiar: es donde llegan casi todas las propuestas, y puede parecer una app de entregas más que un servicio médico."
+    },
+    {
+      "id": "challenger-cracktro",
+      "label": "Cracktro",
+      "verdict": "declined",
+      "lineage": "Pantallas de título de demoscene",
+      "thesis": "Texto bitmap sobre vacío negro con polvo en capas.",
+      "palette": ["#0A0A0A", "#F2EEDF", "#FFB000"],
+      "materials": ["fuente bitmap", "capas de partículas"],
+      "viewport": "Una línea de texto inmóvil sobre negro.",
+      "case": "Contradice la paleta fijada en blanco y azules; los dueños de mascotas no se identifican con ella.",
+      "kept": "Jerarquía sin cajas.",
+      "risk": "Fría y ajena para un servicio de salud.",
+      "hero": "https://impeccable.style/worlds/cards/operate-c-cracktro-scroller-queue-hero.webp"
+    },
+    {
+      "id": "challenger-crease",
+      "label": "Pliegue curvo",
+      "verdict": "declined",
+      "lineage": "Origami de pliegue curvo",
+      "thesis": "Una sola línea curva da forma a todo el plano.",
+      "palette": ["#F1EAD9", "#2B2B2B", "#8A8A8A"],
+      "materials": ["papel de algodón", "sombra en grafito"],
+      "viewport": "Un disco de papel que se alza sobre un arco.",
+      "case": "Bello pero abstracto: no explica el servicio a domicilio.",
+      "kept": "Una sola línea activa.",
+      "risk": "Lectura de galería, no de servicio.",
+      "hero": "https://impeccable.style/worlds/cards/paper-folds-pleats-deployable-curved-crease-shell-hero.webp"
+    },
+    {
+      "id": "challenger-opart",
+      "label": "Textil op-art",
+      "verdict": "declined",
+      "lineage": "Estampados ópticos de los sesenta",
+      "thesis": "Una repetición diseñada para que no se encuentre su costura.",
+      "palette": ["#000000", "#FFFFFF"],
+      "materials": ["tela mate", "onda generativa"],
+      "viewport": "Un campo de ondas en blanco y negro.",
+      "case": "Pierde en claridad y en confianza clínica.",
+      "kept": "Repetición sin costura a cualquier ancho.",
+      "risk": "Mareante en celular.",
+      "hero": "https://impeccable.style/worlds/cards/design-canon-op-art-textile-repeat-hero.webp"
+    },
+    {
+      "id": "challenger-kaiju",
+      "label": "Alerta kaiju",
+      "verdict": "declined",
+      "lineage": "Transmisiones de emergencia de cine de monstruos",
+      "thesis": "Rayas de protección civil y mapas de evacuación.",
+      "palette": ["#8C8C8C", "#D7261E", "#FFFFFF"],
+      "materials": ["noticiero monocromo", "rayas de alerta"],
+      "viewport": "Tarjeta de título con flecha de mapa.",
+      "case": "Alarma constante: lo opuesto a la calma que busca el dueño de una mascota enferma.",
+      "kept": "Gramática de escalamiento para urgencias.",
+      "risk": "Genera ansiedad.",
+      "hero": "https://impeccable.style/worlds/cards/pop-culture-shelf-kaiju-broadcast-alert-hero.webp"
+    },
+    {
+      "id": "challenger-vu",
+      "label": "Puente de vúmetros",
+      "verdict": "declined",
+      "lineage": "Consolas de grabación",
+      "thesis": "Una fila de agujas idénticas que se leen como regla.",
+      "palette": ["#F3EAD3", "#111111", "#C1272D", "#5A3A22"],
+      "materials": ["vidrio", "nogal y acero"],
+      "viewport": "Una fila de medidores.",
+      "case": "Sin relación con el público ni con el servicio.",
+      "kept": "Un módulo repetido como regla de la página.",
+      "risk": "Disfraz de estudio de audio.",
+      "hero": "https://impeccable.style/worlds/cards/signals-instruments-vu-meter-bridge-hero.webp"
+    }
+  ],
+  "reroll": { "registers": ["safer", "bolder"] },
+  "buildPath": { "value": "code" },
+  "canon": true,
+  "canonCard": {
+    "label": "El estándar del sector",
+    "thesis": "La web típica de veterinaria a domicilio, ejecutada con mucho oficio.",
+    "palette": ["#FFFFFF", "#14283B", "#2268A3"],
+    "materials": ["retícula limpia", "fotografía de mascotas"],
+    "viewport": "Foto grande de veterinario con perro, titular y botón de agendar.",
+    "risk": "Indistinguible de la competencia, por diseño."
+  },
+  "steer": true
+}

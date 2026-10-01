@@ -1,0 +1,111 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-display: 'Fredoka Variable', ui-rounded, system-ui, sans-serif;
+  --font-sans: 'Figtree Variable', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  /* Paleta del cliente (PRD §14) */
+  --color-profundo: #0e4a7b;
+  --color-clinico: #2268a3;
+  --color-celeste: #dcebf7;
+  --color-tinta: #14283b;
+  --color-wa: #25d366;
+  /* Derivados de la paleta: junta del azulejo y esmalte */
+  --color-junta: #c3d9ee;
+  --color-esmalte: #f7fbfe;
+  --color-tinta-suave: #3d5268;
+
+  /* Módulo del azulejo: la regla de toda la página */
+  --spacing-tile: 4.5rem;
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-quint: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+@layer base {
+  html {
+    color: var(--color-tinta);
+    background: #fff;
+    -webkit-tap-highlight-color: transparent;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    scrollbar-color: #9cbcdb #fff;
+    scroll-padding-top: 5.5rem;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+
+  body {
+    font-family: var(--font-sans);
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    caret-color: var(--color-clinico);
+  }
+
+  ::selection {
+    background: var(--color-celeste);
+    color: var(--color-profundo);
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--color-clinico);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    color: var(--color-profundo);
+    text-wrap: balance;
+    letter-spacing: -0.01em;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  a {
+    text-underline-offset: 0.22em;
+    text-decoration-thickness: 1.5px;
+  }
+}
+
+@layer components {
+  /* Pared de azulejo: juntas finas alineadas al módulo */
+  .tile-wall {
+    background-color: var(--color-esmalte);
+    background-image:
+      linear-gradient(var(--color-junta) 1px, transparent 1px),
+      linear-gradient(90deg, var(--color-junta) 1px, transparent 1px);
+    background-size: var(--spacing-tile) var(--spacing-tile);
+    background-position: -1px -1px;
+  }
+
+  /* Cenefa: azulejo SVG repetido en número entero de piezas, sin costura a cualquier ancho */
+  .cenefa {
+    background-image: url('./assets/azulejo.svg');
+    background-repeat: round;
+    background-size: 2.25rem 2.25rem;
+  }
+
+  /* Select con flecha dibujada en el azul clínico, misma altura que los inputs */
+  .select-chevron {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3.5 6l4.5 4.5L12.5 6' fill='none' stroke='%232268A3' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-size: 1.1rem;
+    background-position: right 1rem center;
+    padding-right: 2.75rem;
+  }
+
+  .tabular {
+    font-variant-numeric: tabular-nums;
+  }
+}
